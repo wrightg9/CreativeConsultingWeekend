@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Company Challenge Sign-Up — Creative Consulting Weekend</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#E55A4E;
+      --dark:#0f1720;
+      --muted:#6b7280;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      color:var(--dark);
+      line-height:1.45;
+      background:#fff;
+    }
+    header{
+      position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(15,23,32,0.06);z-index:50;
+    }
+    .header-inner{max-width:var(--max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:0.9rem 1.25rem;}
+    .site-title{flex:1;text-align:center;}
+    .site-title a{font-family:"Space Mono",monospace;font-weight:700;text-decoration:none;color:var(--dark);}
+    nav{display:flex;gap:0.75rem;}
+    .nav-link{text-decoration:none;color:var(--dark);padding:0.35rem 0.6rem;border-radius:6px;font-weight:500;}
+    .nav-link:hover{background:rgba(229,90,78,0.06)}
+    .hero{
+      max-width:var(--max-width);margin:36px auto;padding:28px 20px;
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;
+    }
+    .hero-left h1{font-size:2rem;margin:0 0 10px;font-family:"Space Mono",monospace;}
+    .hero-left p{color:var(--muted);}
+    .button{background:var(--accent);color:#fff;padding:10px 14px;border-radius:8px;text-decoration:none;font-weight:600;}
+    .section{max-width:var(--max-width);margin:30px auto;padding:20px;border-radius:10px;background:#fff;box-shadow:0 4px 18px rgba(12,15,20,0.03);}
+    .section h2{margin-top:0;}
+    form{display:grid;gap:12px;margin-top:14px;}
+    input,textarea,select{padding:10px;border:1px solid rgba(15,23,32,0.1);border-radius:6px;font:inherit;width:100%;}
+    label{font-weight:600;}
+    button.submit{background:var(--accent);color:white;border:none;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer;}
+    button.submit:hover{opacity:0.9;}
+    footer{max-width:var(--max-width);margin:40px auto;padding:28px 20px;color:var(--muted);border-top:1px solid rgba(15,23,32,0.04);}
+    @media(max-width:880px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="site-title">
+      <a href="index.html">Creative Consulting Weekend</a>
+    </div>
+    <nav>
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="company-signup.html">Company Sign-Up</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-left">
+    <h1>Partner With Us — Submit a Challenge</h1>
+    <p>Join the <strong>Creative Consulting Weekend</strong> — where vetted student teams use a <strong>20-year creative process</strong> to uncover innovative ways to propel your company into the future.</p>
+    <a href="#form" class="button">Express Interest</a>
+  </div>
+  <div style="color:var(--muted);">
+    <p><strong>Why Join?</strong><br>High-level students from diverse backgrounds will collaborate intensively for one weekend to spark new insights, strategies, and opportunities for your business.</p>
+    <p><strong>Optional Contribution:</strong><br>Companies may contribute a small amount toward student prize incentives. This is entirely optional — the focus is collaboration, not competition.</p>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <h2>How It Works</h2>
+  <p>It’s simple: express your interest below. We’ll follow up with a short conversation to confirm fit, logistics, and the challenge you’d like our students to tackle.</p>
+</section>
+
+<section class="section" id="form">
+  <h2>Company Sign-Up Form</h2>
+  <p style="color:var(--muted);margin-top:0;">Fill out this quick form to express interest in joining as a company partner. You could be the first to help shape the next generation of creative consultants!</p>
+
+  <form name="companySignup" method="POST" action="https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_ID/exec">
+    <label>Company Name
+      <input type="text" name="company" required>
+    </label>
+    <label>Contact Person
+      <input type="text" name="contact" required>
+    </label>
+    <label>Email
+      <input type="email" name="email" required>
+    </label>
+    <label>Phone
+      <input type="text" name="phone">
+    </label>
+    <label>Briefly describe a challenge or area you’d like creative insight on
+      <textarea name="challenge" rows="4" required></textarea>
+    </label>
+    <label>Optional: Potential prize contribution amount (if any)
+      <input type="text" name="donation" placeholder="e.g. $200 prize support (optional)">
+    </label>
+    <button class="submit" type="submit">Submit Interest</button>
+  </form>
+  <p style="color:var(--muted);margin-top:10px;font-size:0.9rem;">This form sends your information securely to the organizing team. We’ll reach out shortly to schedule a conversation about your company’s participation.</p>
+</section>
+
+<section class="section">
+  <h2>Previous Partners</h2>
+  <p style="color:var(--muted);margin:0;">You could be the first! We’re building lasting collaborations between creative students and forward-thinking companies.</p>
+</section>
+
+<footer>
+  <div><strong>Creative Consulting Weekend</strong> — Consulting / Intrapreneurship Certificate</div>
+  <div style="text-align:right;">Contact: <a href="mailto:organizer@example.edu">organizer@example.edu</a></div>
+</footer>
+
+</body>
+</html>
